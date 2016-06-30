@@ -7,7 +7,7 @@
 	<title>Halcyon</title>
 	
 	<link rel="stylesheet" href="js/owl.carousel/assets/owl.carousel.css"> 
-	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,7 +23,6 @@
 		  <nav class="page-nav overlay-menu">
 		    <ul class="nav-ul">
 		      <li><a href="index.html">Home</a></li>
-		      <li><a href="#intro">About</a></li>
 		      <li><a href="#services">Services</a></li>
 		      <li><a href="#works">Work</a></li>
 		      <li><a href="#team">Team</a></li>
@@ -46,7 +45,7 @@
 		<p class="text">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Nulla expedita quasi doloremque, blanditiis omnis recusandae minima et aliquid hic enim vero assumenda officiis tempora eaque similique perferendis quod dolor dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod illum odit sed suscipit non delectus eius ea natus, accusamus dolorem debitis veritatis ut cum unde iste velit aliquid sunt maxime?</p>
 	</section>
 
-	<section class="services container-narrow">
+	<section class="services container-narrow" id="services">
 		<h2>
 			love what you do and&nbsp;you'll&nbsp;do&nbsp;it&nbsp;well
 		</h2>
@@ -128,7 +127,7 @@
 			</ul>
 	</section>
 
-	<section class="works">
+	<section class="works" id="works">
 		<div class="container-narrow">
 			<h2>Our works</h2>
 			<hr class="title">
@@ -168,7 +167,7 @@
 		</div>
 	</section>
 
-	<section class="team container-narrow">
+	<section class="team container-narrow" id="team">
 			<h2>We're a team that adore what&nbsp;we&nbsp;do</h2>
 			<hr class="title">
 			<ul class="team-list">
@@ -219,7 +218,7 @@
 		</div>
 	</section>
 
-	<section class="contact">
+	<section class="contact" id="contact">
 		<div class="container-narrow">
 			<h2>Drop us a line</h2>
 			<hr class="title">
@@ -267,111 +266,12 @@
 	</footer>
 </div>	
 <!-- scripts -->
-<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://use.fontawesome.com/eaaba8c099.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfrzx3QTPX5VkmDSOfavaVEYRHnu-Ki3s"></script>
-
-
-<script>
-function initialize() {
-	var mapCanvas = document.getElementById('google-maps');
-	var mapOptions = {
-	center: new google.maps.LatLng(-33.82140,	150.99542),
-	disableDefaultUI: true,
-	zoom: 13,
-	mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
-	var map = new google.maps.Map(mapCanvas, mapOptions);
-
-	
-map.set('styles', [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]);
-
-var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(-33.82140,	150.99542),
-      map: map,
-      title:"We are here! Click to zoom"
-  });
-
-marker.setMap(map);
-
-// Zoom to 9 when clicking on marker
-google.maps.event.addListener(marker,'click',function() {
-  map.setZoom(18);
-  map.setCenter(marker.getPosition());
-  });
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-
-</script>
 <script src="js/owl.carousel/owl.carousel.js"></script>
-<script>
-	$(document).ready(function(){
-  $(".owl-carousel").owlCarousel(
-  	{
-    loop:true,
-    margin:10,
-    nav:false,
-    autoPlay: 3000, //Set AutoPlay to 3 seconds
-    dots: true,
-    mouseDrag: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-});
-});
-</script>
 <script src="js/isotope.pkgd.min.js"></script>
-<script>
-	// external js: isotope.pkgd.js
-
-// init Isotope
-var $grid = $('.grid').isotope({
-  itemSelector: '.element-item',
-  layoutMode: 'fitRows'
-});
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  numberGreaterThan50: function() {
-    var number = $(this).find('.number').text();
-    return parseInt( number, 10 ) > 50;
-  },
-  // show if name ends with -ium
-  ium: function() {
-    var name = $(this).find('.name').text();
-    return name.match( /ium$/ );
-  }
-};
-// bind filter button click
-$('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
-});
-// change is-checked class on buttons
-$('.button-group').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
-  });
-});
-
-</script>
-<script>
-	$('#toggle').click(function() {
-   $(this).toggleClass('active');
-   $('#overlay').toggleClass('open');
-  });
-</script>
+<script src="js/SmoothScroll.js"></script>
+<script src="js/main.js"></script>
 </body> 
 </html>
