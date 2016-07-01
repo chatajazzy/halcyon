@@ -228,10 +228,11 @@ hr.post {
   background: url(../images/form.jpg) no-repeat;
   background-size: cover;
   background-position: 50%;
-  height: 30vh;
+  min-height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 .subscribtion-text {
   font-size: 1.5rem;
@@ -254,7 +255,7 @@ input[type="text"] {
   color: #fff;
   font-size: 1.5rem;
 }
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="submit"]:focus {
   outline: 0;
 }
 input[type="submit"] {
@@ -269,18 +270,19 @@ input[type="submit"] {
 .contact {
   background: url(../images/contact.jpg) no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   height: 100vh;
-  padding-top: 1rem;
-  margin-bottom: 5rem;
+  padding: 4rem 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 .contact-list {
-  width: 40rem;  
+  width: 100%;  
   margin: 5rem auto;
 }
 .contact-item {
   background: #fff;
-  width: 80%;
+  width: 30rem;
   margin: 0 auto 3rem;
   padding: 5rem 0;
 }
@@ -301,7 +303,7 @@ input[type="submit"] {
   margin-top: 5rem;
 }
 #google-maps {
-  height: 50vh;
+  height: 55vh;
   margin-top: 5rem;
 }
 .page-footer {
