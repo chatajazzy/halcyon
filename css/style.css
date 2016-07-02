@@ -47,9 +47,15 @@ h2 {
   min-height: 65vh;
   background: url(../images/header.jpg) no-repeat center;
   background-size: cover;
-  text-align: center;
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-align: center;  
+  -ms-flex-align: center;  
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .header-caption {
   width: 100%;
@@ -145,8 +151,15 @@ hr.title:after {
   background-size: cover;
   background-position: 50%;
   text-align: center;
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-align: center;  
+  -ms-flex-align: center;  
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 #quote blockquote {
   width: 100%;
@@ -229,8 +242,14 @@ hr.post {
   background-size: cover;
   background-position: 50%;
   min-height: 30vh;
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-align: center;  
+  -ms-flex-align: center;  
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 1rem 0;
 }
@@ -270,11 +289,15 @@ input[type="submit"] {
 .contact {
   background: url(../images/contact.jpg) no-repeat;
   background-size: cover;
-  height: 100vh;
-  padding: 4rem 0;
-  text-align: center;
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;  
+  -webkit-box-align: center;  
+  -ms-flex-align: center;  
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .contact-list {
   width: 100%;  
@@ -422,9 +445,6 @@ input[type="submit"] {
   }
   .posts-list li:last-child, .team-list li:last-child, .contact-list li:last-child {
     margin-right: 0;
-  }
-  .contact {
-    height: 70vh;
   }
   .contact-list {
     width: 70rem;
